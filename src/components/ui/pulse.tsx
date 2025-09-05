@@ -1,4 +1,4 @@
-export default async function () {
+export default async function Pulse() {
   return (
     <div className="space-y-3">
       <div className="bg-muted h-4 animate-pulse rounded" />

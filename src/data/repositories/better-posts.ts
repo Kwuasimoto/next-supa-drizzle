@@ -1,11 +1,11 @@
-import { db } from "../index";
-import { posts, type PostInsert, type PostSelect } from "../schema/posts";
+import { db, type DBSchema } from "@/data";
+import { posts, type PostInsert, type PostSelect } from "@/data/schema/posts";
 import { eq, desc, asc, ilike } from "drizzle-orm";
 import type { PostgresJsDatabase } from "drizzle-orm/postgres-js";
 
 // Better pattern: Instance-based with dependency injection
 export class PostRepository {
-  constructor(private database: PostgresJsDatabase<any> = db) {}
+  constructor(private database: PostgresJsDatabase<DBSchema> = db) {}
 
   async getAll(options?: {
     limit?: number;
@@ -96,4 +96,5 @@ export class PostRepository {
 }
 
 // Expose hook to make database
-export const usePostRepository = () => new PostRepository(db);
+export const createPostRepository = (database?: PostgresJsDatabase<DBSchema>) =>
+  new PostRepository(database);

@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Clock, Info } from "lucide-react";
 import type { DemoCardProps } from "@/types";
 
-export default async function ({
+export default async function DemoCard({
   title,
   description,
   strategy,

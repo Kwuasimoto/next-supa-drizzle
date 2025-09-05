@@ -12,4 +12,5 @@ dotenv.config({ path: isProd ? ".env.production" : ".env.local" });
 const client = postgres(process.env.DATABASE_URL!);
 export const db = drizzle(client, { schema });
 
+export type DBSchema = typeof schema;
 export * from "./schema";
