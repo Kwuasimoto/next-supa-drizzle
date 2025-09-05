@@ -22,6 +22,6 @@ export default {
   experimentalTernaries: false,
   parser: "typescript",
   filepath: "./src/**",
-  importOrder: ['^@', '^[a-zA-Z0-9-]+', '^[./]'],
-  plugins: ["prettier-plugin-tailwindcss"]
-}
+  importOrder: ["^@", "^[a-zA-Z0-9-]+", "^[./]"],
+  plugins: ["prettier-plugin-tailwindcss"],
+};

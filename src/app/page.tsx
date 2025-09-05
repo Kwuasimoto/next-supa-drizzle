@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { db, users } from "@/db";
+import { isProd } from "@/lib/const";
 import { eq } from "drizzle-orm";
 
 export default async function Home() {
@@ -14,9 +15,12 @@ export default async function Home() {
       <Card className="p-4 bg-card-foreground text-foreground">
         {user ? (
           <div className="flex flex-col gap-2 justify-center">
-            <h2>Congratulations! Local is working</h2>
-            <p>Time for production</p>
-            <pre className="rounded p-4">{JSON.stringify(user, null, 2)}</pre>
+            <h2>Congratulations! {isProd ? "prod" : "local"} is working</h2>
+            {isProd ? (
+              <p className="text-white/80">Have fun!</p>
+            ) : (
+              <p className="text-white/50">Time for production</p>
+            )}
           </div>
         ) : (
           <span className="rounded p-4">
