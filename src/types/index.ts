@@ -47,6 +47,12 @@ export interface CacheOptions {
   fresh?: boolean; // force fresh fetch
 }
 
+export interface PostCardProps {
+  post: Post;
+  renderingStrategy?: string;
+  showReadMore?: boolean;
+}
+
 // Component prop types
 export interface DemoCardProps {
   title: string;
@@ -56,12 +62,9 @@ export interface DemoCardProps {
   children: React.ReactNode;
   explanation: string;
   isLoading?: boolean;
-}
-
-export interface PostCardProps {
-  post: Post;
-  renderingStrategy?: string;
-  showReadMore?: boolean;
+  strategyType?: StrategyType; // Add strategy type for visual indicators
+  buildTime?: string; // For SSG build timestamp
+  renderTime?: string; // For SSR render timestamp
 }
 
 export interface LayoutProps {

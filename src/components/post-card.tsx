@@ -7,11 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
-import { Post } from "@/types";
-
-interface PostCardProps {
-  post: Post;
-}
+import { PostCardProps } from "@/types";
 
 const PostCard = ({ post }: PostCardProps) => {
   return (
