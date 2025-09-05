@@ -1,11 +1,28 @@
-import Counter from "@/components/counter";
 import { Card } from "@/components/ui/card";
+import { db, users } from "@/db";
+import { eq } from "drizzle-orm";
 
-export default function Home() {
+export default async function Home() {
+  const userId = 1;
+
+  const user = await db.query.users.findFirst({
+    where: eq(users.id, userId),
+  });
+
   return (
-    <div className="grid min-h-screen items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20">
-      <Card className="mt-4 p-4">
-        <Counter />
+    <div className="relative grid min-h-screen items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20">
+      <Card className="p-4 bg-card-foreground text-foreground">
+        {user ? (
+          <div className="flex flex-col gap-2 justify-center">
+            <h2>Congratulations! Local is working</h2>
+            <p>Time for production</p>
+            <pre className="rounded p-4">{JSON.stringify(user, null, 2)}</pre>
+          </div>
+        ) : (
+          <span className="rounded p-4">
+            Error!~ Failed to find user by ID {userId} in your db
+          </span>
+        )}
       </Card>
     </div>
   );
