@@ -20,6 +20,7 @@
     "drizzle-orm": "^0.44.5",
     "next": "15.5.2",
     "postgres": "^3.4.7",
+    "prettier": "^3.6.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
@@ -29,6 +30,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.2",
     "drizzle-kit": "^0.31.4",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
