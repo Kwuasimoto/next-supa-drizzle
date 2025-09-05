@@ -5,8 +5,7 @@ import * as dotenv from "dotenv";
 // Re-export all schemas to keep imports clean.
 import * as schema from "./schema";
 
-const isProd = process.env.PRODUCTION === "true";
-dotenv.config({ path: isProd ? ".env.production" : ".env.local" });
+dotenv.config({ path: ".env.production" });
 
 // Create client
 const client = postgres(process.env.DATABASE_URL!);
