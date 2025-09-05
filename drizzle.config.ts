@@ -2,13 +2,13 @@
 import { defineConfig } from "drizzle-kit";
 import * as dotenv from "dotenv";
 
-dotenv.config({ path: ".env.local" });
 const isProd = process.env.PRODUCTION === "true";
+dotenv.config({ path: isProd ? ".env.production" : ".env.local" });
 
 export default defineConfig({
   out: "./drizzle",
   dialect: "postgresql",
-  schema: "./src/db/schema",
+  schema: "./src/data/schema/*",
 
   dbCredentials: {
     url: process.env.DATABASE_URL!,
