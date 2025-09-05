@@ -21,11 +21,12 @@ export default async function Home() {
             ) : (
               <p className="text-white/50">Time for production</p>
             )}
+            <pre> {JSON.stringify(user, null, 2)} </pre>
           </div>
         ) : (
-          <span className="rounded p-4">
+          <p className="rounded p-4">
             Error!~ Failed to find user by ID {userId} in your db
-          </span>
+          </p>
         )}
       </Card>
     </div>
