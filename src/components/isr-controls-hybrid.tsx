@@ -77,7 +77,7 @@ export function ISRControlsHybrid() {
             </form>
           )}
 
-          <p className="max-w-32 text-center text-xs text-slate-600 dark:text-slate-400">
+          <p className="max-w-xs text-center text-xs text-slate-600 dark:text-slate-400">
             {useJS ? "Client-side (smooth)" : "Server-side (SEO-friendly)"}
           </p>
         </div>
@@ -107,7 +107,7 @@ export function ISRControlsHybrid() {
             </a>
           )}
 
-          <p className="max-w-32 text-center text-xs text-slate-600 dark:text-slate-400">
+          <p className="max-w-xs text-center text-xs text-slate-600 dark:text-slate-400">
             {useJS ? "Client-side refresh" : "Server-side navigation"}
           </p>
         </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -10,7 +12,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Clock, Info, Zap, Server, RefreshCw, Monitor } from "lucide-react";
 import type { DemoCardProps } from "@/types";
 
-export default async function DemoCard({
+export default function DemoCard({
   title,
   description,
   strategy,

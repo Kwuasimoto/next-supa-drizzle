@@ -47,7 +47,7 @@ const Layout = ({
       case "ISR":
         return "bg-purple-500";
       case "CSR":
-        return "bg-orange-500";
+        return "bg-red-500";
       default:
         return "bg-gray-500";
     }
