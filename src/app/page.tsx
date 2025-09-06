@@ -56,7 +56,7 @@ export default async function Home() {
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div
-                      className={`h-12 w-12 rounded-lg ${strategy.color} mb-4 flex items-center justify-center`}
+                      className={`h-12 w-12 rounded-lg ${strategy.color} mb-4 flex items-center justify-center transition-colors duration-200 group-hover:scale-110`}
                     >
                       <IconComponent className="h-6 w-6 text-white" />
                     </div>
@@ -67,9 +67,9 @@ export default async function Home() {
                     {strategy.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex h-full flex-col">
                   <ul className="mb-6 space-y-2">
-                    {strategy.features.map((feature, index) => (
+                    {strategy.features.map((feature: string, index: number) => (
                       <li
                         key={index}
                         className="text-muted-foreground flex items-center text-sm"
@@ -81,7 +81,7 @@ export default async function Home() {
                   </ul>
                   <Button
                     asChild
-                    className="w-full transition-all group-hover:gap-3"
+                    className="mt-auto w-full cursor-pointer transition-all group-hover:gap-3"
                   >
                     <Link href={strategy.path}>
                       Try {strategy.title.split(" ")[0]}
@@ -128,7 +128,12 @@ export default async function Home() {
               </p>
             </div>
           </div>
-          <Button size="lg" variant="outline" asChild>
+          <Button
+            size="lg"
+            variant="outline"
+            asChild
+            className="bg-secondary hover:bg-primary/10 hover:border-primary cursor-pointer"
+          >
             <Link href="/caching">
               Explore Caching Demos
               <ArrowRight className="ml-2 h-4 w-4" />

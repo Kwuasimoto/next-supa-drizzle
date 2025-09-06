@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react";
+import type { PostModel, UserModel, RenderingStrategyModel } from "./models";
 
 // Re-export database types and transform them for frontend use
 export type { PostSelect, PostInsert } from "@/data/schema/posts";
@@ -6,29 +6,6 @@ export type {
   RenderingStrategySelect,
   RenderingStrategyInsert,
 } from "@/data/schema/strategies";
-
-// Frontend-safe types (with proper serialization)
-export interface Post {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  publishedAt: Date; // ISO 8601 date string (serialized from Date)
-  tags: string[];
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-// UI-specific types that extend database types
-export interface RenderingStrategy {
-  title: string;
-  description: string;
-  icon: LucideIcon; // UI-specific - not in database
-  path: string;
-  color: string;
-  badge: string;
-  features: string[];
-}
 
 // Rendering strategy types
 export type StrategyType = "SSG" | "SSR" | "ISR" | "CSR";
@@ -48,7 +25,7 @@ export interface CacheOptions {
 }
 
 export interface PostCardProps {
-  post: Post;
+  post: PostModel;
   renderingStrategy?: string;
   showReadMore?: boolean;
 }
@@ -123,3 +100,11 @@ export interface PageMetadata {
 }
 
 export type * from "./api";
+
+// Re-export models
+export type { PostModel, UserModel, RenderingStrategyModel } from "./models";
+
+// Create type aliases for backward compatibility
+export type Post = PostModel;
+export type User = UserModel;
+export type RenderingStrategy = RenderingStrategyModel;

@@ -6,3 +6,6 @@ export const users = pgTable("users", {
   email: text("email").notNull().unique(),
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
+
+export type UserSelect = typeof users.$inferSelect;
+export type UserInsert = typeof users.$inferInsert;

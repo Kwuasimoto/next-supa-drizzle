@@ -1,13 +1,16 @@
 import type { RenderingStrategy, Post } from "@/types";
 import { Monitor, RotateCcw, Server, Zap } from "lucide-react";
 
+// Users can be defined here if needed
+// export const users: User[] = [];
+
 export const strategies: RenderingStrategy[] = [
   {
     title: "Static Site Generation (SSG)",
     description: "Pre-rendered at build time for maximum performance",
     icon: Zap,
     path: "/ssg",
-    color: "bg-primary",
+    color: "bg-green-500 hover:bg-green-600",
     badge: "Build Time",
     features: ["Fastest loading", "CDN friendly", "SEO optimized"],
   },
@@ -16,7 +19,7 @@ export const strategies: RenderingStrategy[] = [
     description: "Rendered fresh on each request with dynamic data",
     icon: Server,
     path: "/ssr",
-    color: "bg-primary",
+    color: "bg-blue-500 hover:bg-blue-600",
     badge: "Per Request",
     features: ["Always fresh", "Dynamic content", "SEO friendly"],
   },
@@ -25,7 +28,7 @@ export const strategies: RenderingStrategy[] = [
     description: "Static generation with periodic background updates",
     icon: RotateCcw,
     path: "/isr",
-    color: "bg-primary",
+    color: "bg-purple-500 hover:bg-purple-600",
     badge: "Hybrid",
     features: ["Best of both", "Background updates", "Scalable"],
   },
@@ -34,7 +37,7 @@ export const strategies: RenderingStrategy[] = [
     description: "Rendered in the browser after initial page load",
     icon: Monitor,
     path: "/csr",
-    color: "bg-primary",
+    color: "bg-red-500 hover:bg-red-600",
     badge: "Client Side",
     features: ["Interactive", "SPA experience", "Dynamic UI"],
   },
