@@ -86,7 +86,7 @@ export default function CSRDemo() {
   // Initial load
   useEffect(() => {
     fetchPosts();
-  }, []);
+  });
 
   return (
     <Layout

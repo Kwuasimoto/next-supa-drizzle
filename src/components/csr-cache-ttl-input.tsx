@@ -36,7 +36,7 @@ export function InputForm(props: {
   form.register("ttlSeconds", {
     onChange: (value: ChangeEvent<HTMLInputElement>) => {
       console.log("TTL Changed", value.target.value);
-      props.onChange && props.onChange(Number(value.target.value));
+      if (props.onChange) props.onChange(Number(value.target.value));
     },
   });
 
