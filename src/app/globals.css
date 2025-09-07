@@ -120,6 +120,37 @@
     @apply bg-background text-foreground;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+}
+
+@layer components {
+  button {
+    @apply px-4 py-2 bg-secondary! text-primary! cursor-pointer rounded-md border text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+  }
+
+  .btn-ssr-active {
+    @apply border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 dark:border-blue-800 dark:bg-blue-900/20 dark:text-blue-400;
+  }
+
+  .btn-ssr-inactive {
+    @apply cursor-pointer bg-white hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:bg-zinc-900 dark:text-zinc-100;
+  }
+
+  .btn-csr-active {
+    @apply border-red-200 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-800 dark:bg-red-900/20 dark:text-red-400;
+  }
+
+  .btn-csr-inactive {
+    @apply cursor-pointer bg-white hover:border-red-200 hover:bg-red-50 hover:text-red-700 dark:bg-zinc-900 dark:text-zinc-100;
+  }
+
+  .btn-control-ssr {
+    @apply hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700;
+  }
+
+  .btn-control-csr {
+    @apply hover:border-red-200 hover:bg-red-50 hover:text-red-700;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -128,3 +159,4 @@
     --foreground: #ededed;
   }
 }
+

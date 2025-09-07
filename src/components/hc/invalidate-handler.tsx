@@ -127,13 +127,12 @@ export function InvalidatePathHandler({
   };
 
   return (
-    <div className="space-y-2">
+    <>
       <Button
         onClick={handleInvalidate}
         disabled={disabled || isPending || !path || !canInvalidate}
         className={cn("cursor-pointer", className)}
         variant="outline"
-        size="sm"
       >
         <RefreshCw
           className={`mr-2 h-4 w-4 ${isPending ? "animate-spin" : ""}`}
@@ -155,6 +154,6 @@ export function InvalidatePathHandler({
           {result.message}
         </div>
       )}
-    </div>
+    </>
   );
 }
