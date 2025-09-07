@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 
 export function ISRControlsHybrid() {
   // TODO: State should come from a DB fetch for a true implementation
+  const router = useRouter();
   const [useJS, setUseJS] = useState(false);
 
   return (
@@ -65,10 +66,7 @@ export function ISRControlsHybrid() {
             // SEO-friendly form version (Blue for SSR)
             <form action={invalidatePathFormAction}>
               <Input type="hidden" name="path" value="/isr" />
-              <Button
-                type="submit"
-                className="btn-control-ssr"
-              >
+              <Button type="submit" className="btn-control-ssr">
                 <RefreshCw className="mr-2 h-4 w-4" />
                 Force Revalidate ISR Page
               </Button>
@@ -96,7 +94,7 @@ export function ISRControlsHybrid() {
           ) : (
             // TODO Server-side navigation (Blue for SSR)
             <Button
-              onClick={() => useRouter().refresh()}
+              onClick={router.refresh}
               variant="outline"
               className="btn-control-ssr"
             >
