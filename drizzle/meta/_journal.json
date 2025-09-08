@@ -8,6 +8,13 @@
       "when": 1757040600212,
       "tag": "20250905025000_furry_swarm",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1757110296787,
+      "tag": "20250905221136_glossy_killraven",
+      "breakpoints": true
     }
   ]
 }
